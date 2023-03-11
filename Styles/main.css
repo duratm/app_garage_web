@@ -1,0 +1,166 @@
+@media screen and (min-width: 827px) {
+    .sousMenus {
+        width: 15%;
+    }
+}
+
+@media screen and (min-width: 827px) and
+(max-width: 1178px) {
+    #ulNav li h1{
+        font-size: 125%;
+    }
+}
+
+@media screen and (max-width: 827px) {
+    #ulNav li h1, .sousMenus a {
+        font-size: 80%;
+    }
+    .sousMenus {
+        width: 25%;
+    }
+}
+
+:root {
+    --colorHeader: #167878;
+    --colorHover: #24c4c4;
+    --colorMain: #D9D9D9;
+    --colorText: white;
+    --colorTitle: #6E27A3;
+}
+
+/*__body__*/
+
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column; 
+}
+
+#background {
+    background-image: url("../Images/background.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(7.5px);
+    position: fixed;
+}
+
+/*__Header__*/
+
+header {
+    background-color: var(--colorHeader);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 70px;
+}
+
+#headerImg {
+    width: 110px;
+}
+
+header img {
+    width: 100%;
+}
+
+#currentPage {
+    border-bottom: 2px var(--colorText) solid;
+}
+
+/*__nav__*/
+#navigateur{/*nav*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+}
+
+#ulNav {
+    height: 100%;
+    width: 80%;
+}
+
+#ulNav, .sousMenus {/*ul*/
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.liNav, #liNavConnect, #currentPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#ulNav li a, .sousMenus a {
+    text-decoration: none;
+    font-family: "Roboto B";
+    color: var(--colorText);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#ulNav li h1 {
+    text-align: center;
+}
+
+.liNav:hover, #liNavConnect:hover, .sousMenus li:hover {
+    background-color:var(--colorHover);
+}
+
+.liNav:hover {
+    border-bottom: 1px var(--colorText) solid;
+}
+
+#liNavConnect i {
+    font-size: 40px;
+    color: black; 
+}
+
+/*__sous-menus*/
+.sousMenus {
+	display:none; 
+	margin: 0; padding: 0;
+	position: absolute; 
+	top: 6.5%;
+    text-align: center;
+}
+.sousMenus li {
+    text-align: center;
+    margin: 10px;
+    width: 92%;
+}
+
+#liNavConnect:hover .sousMenus {
+    display: block;
+    background-color: var(--colorHeader);
+}
+
+/*__main__*/
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--colorMain);
+    margin: 5%;
+    width: 70%;
+    border-radius: 20px 20px 20px 20px;
+}
+
+#mainTitle h1 {
+    color: var(--colorTitle);
+    font-size: 60px;
+    margin-bottom: 0px;
+}

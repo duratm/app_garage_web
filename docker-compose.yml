@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php-apache
+    build: .
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - "8000:80"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_HOST=db_garage_environment
+      - POSTGRES_USER=postgres
+  db_garage_environment:
+    container_name: db_garage_environment
+    image: postgres:14.1-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./dump.sql:/docker-entrypoint-initdb.d/create_tables.sql
+networks:
+  default:
+    name: postgres-service_default
+volumes:
+  db:
+    driver: local
